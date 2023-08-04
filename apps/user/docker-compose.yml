@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  user:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: user
+    container_name: user
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db_user
+    command: python manage.py runserver 0.0.0.0:8000
+
+  db_user:
+    image: postgres:latest
+    container_name: db_user
+    environment:
+      - POSTGRES_USER=user_service
+      - POSTGRES_PASSWORD=user_service
+      - POSTGRES_DB=user_service
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
