@@ -4,10 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-djangorestframework = "*"
+alembic = "*"
+fastapi = "*"
+sqlalchemy = "*"
+sqlalchemy-utils = "*"
+python-dotenv = "*"
 psycopg2-binary = "*"
-drf-yasg = "*"
+passlib = "*"
+uvicorn = "*"
+pydantic = {extras = ["email"], version = "*"}
+fastutils-hmarcuzzo = "*"
+core = {file = "file:../../core"}
 
 [dev-packages]
 black = "*"
