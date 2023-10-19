@@ -11,6 +11,7 @@ sqlalchemy-utils = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
 passlib = "*"
+argon2-cffi = "*"
 uvicorn = "*"
 pydantic = {extras = ["email"], version = "*"}
 fastutils-hmarcuzzo = "*"
