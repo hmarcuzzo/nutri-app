@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   user_app:
@@ -23,6 +23,9 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - user-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+volumes:
+  user-data:

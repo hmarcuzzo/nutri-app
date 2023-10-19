@@ -1,15 +1,23 @@
 FROM python:3.10-alpine
 
+# Create a user to run the app
+RUN adduser -D user_app
+USER user_app
+
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONPATH "${PYTHONPATH}:/app"
+ENV APP_PATH=/app
+
+ENV PATH=$PATH:/home/user_app/.local/bin \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH="${PYTHONPATH}:${APP_PATH}"
 
 # Install dependencies from pipenv
 COPY Pipfile* /tmp/
-RUN pip install pipenv
-RUN cd /tmp && pipenv install --system --deploy
+RUN pip install pipenv && \
+    cd /tmp && \
+    pipenv install --system --deploy
 
 # Copy the app
-WORKDIR /app
-COPY . /app
+WORKDIR $APP_PATH
+COPY . $APP_PATH
