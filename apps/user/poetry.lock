@@ -479,7 +479,7 @@ files = [
 
 [[package]]
 name = "nutri-app-core"
-version = "0.0.1"
+version = "0.0.2"
 description = "Core of NutriApp"
 optional = false
 python-versions = "^3.10"
@@ -490,7 +490,7 @@ develop = false
 type = "git"
 url = "https://github.com/hmarcuzzo/nutri-app.git"
 reference = "main"
-resolved_reference = "8ae19e1db8d73e05aa35647ff60b896c3ec8ef7e"
+resolved_reference = "3414adfcddde02e32be4a848e6da10dd5e8bbbac"
 subdirectory = "core"
 
 [[package]]
