@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from constants.Enum.user_role import UserRole
 from fastutils_hmarcuzzo.common.dto.base_dto import BaseDto
+from nutri_app_core.constants.Enum.user_role import UserRole
 
 
 class UserDto(BaseDto):
