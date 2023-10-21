@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "user"
+version = "0.1.0"
+description = ""
+authors = ["hmarcuzzo <henrique.souza.m06@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+alembic = "^1.12.0"
+fastapi = "^0.104.0"
+sqlalchemy = "^2.0.22"
+sqlalchemy-utils = "^0.41.1"
+python-dotenv = "^1.0.0"
+psycopg2-binary = "^2.9.9"
+passlib = "^1.7.4"
+argon2-cffi = "^23.1.0"
+uvicorn = "^0.23.2"
+pydantic = {extras = ["email"], version = "^2.4.2"}
+fastutils-hmarcuzzo = "^0.2.6"
+nutri-app-core = {git = "https://github.com/hmarcuzzo/nutri-app.git", rev = "main", subdirectory = "core"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
