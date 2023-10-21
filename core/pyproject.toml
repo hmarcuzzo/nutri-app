@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nutri-app-core"
-version = "0.0.1"
+version = "0.0.2"
 description = "Core of NutriApp"
 authors = ["hmarcuzzo <henrique.souza.m06@gmail.com>"]
 readme = "README.md"
