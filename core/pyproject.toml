@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "nutri-app-core"
+version = "0.0.1"
+description = "Core of NutriApp"
+authors = ["hmarcuzzo <henrique.souza.m06@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
