@@ -218,13 +218,13 @@ wmi = ["wmi (>=1.5.1,<2.0.0)"]
 
 [[package]]
 name = "email-validator"
-version = "2.0.0.post2"
+version = "2.1.0"
 description = "A robust email address syntax and deliverability validation library."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "email_validator-2.0.0.post2-py3-none-any.whl", hash = "sha256:2466ba57cda361fb7309fd3d5a225723c788ca4bbad32a0ebd5373b99730285c"},
-    {file = "email_validator-2.0.0.post2.tar.gz", hash = "sha256:1ff6e86044200c56ae23595695c54e9614f4a9551e0e393614f764860b3d7900"},
+    {file = "email_validator-2.1.0-py3-none-any.whl", hash = "sha256:4496ecc949b51e42d1c9e6159d57cd04ef017af57d2e366ed7fd998f1bf8af69"},
+    {file = "email_validator-2.1.0.tar.gz", hash = "sha256:5f511cca8856bb03251d6292ba59e7f98978aae13fa5823ddd8bf885c56a6260"},
 ]
 
 [package.dependencies]
@@ -266,18 +266,51 @@ typing-extensions = ">=4.8.0"
 all = ["email-validator (>=2.0.0)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=2.11.2)", "orjson (>=3.2.1)", "pydantic-extra-types (>=2.0.0)", "pydantic-settings (>=2.0.0)", "python-multipart (>=0.0.5)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
 
 [[package]]
+name = "fastapi-pagination"
+version = "0.12.11"
+description = "FastAPI pagination"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "fastapi_pagination-0.12.11-py3-none-any.whl", hash = "sha256:126df48f675240bcce61174cf2d58e7f338635acf25a4c21433c0d88ea178122"},
+    {file = "fastapi_pagination-0.12.11.tar.gz", hash = "sha256:d9693be07ec1a4a33c4297aca9b11e0f8c94f21e84d6da0cbd575d052b795235"},
+]
+
+[package.dependencies]
+fastapi = ">=0.93.0"
+pydantic = ">=1.9.1"
+
+[package.extras]
+all = ["SQLAlchemy (>=1.3.20)", "asyncpg (>=0.24.0)", "beanie (>=1.11.9,<2.0.0)", "bunnet (>=1.1.0,<2.0.0)", "databases (>=0.6.0)", "django (<5.0.0)", "mongoengine (>=0.23.1,<0.28.0)", "motor (>=2.5.1,<4.0.0)", "orm (>=0.3.1)", "ormar (>=0.11.2)", "piccolo (>=0.89,<0.122)", "pony (>=0.7.16,<0.8.0)", "scylla-driver (>=3.25.6,<4.0.0)", "sqlakeyset (>=2.0.1680321678,<3.0.0)", "sqlmodel (>=0.0.8,<0.0.9)", "tortoise-orm (>=0.16.18,<0.21.0)"]
+asyncpg = ["SQLAlchemy (>=1.3.20)", "asyncpg (>=0.24.0)"]
+beanie = ["beanie (>=1.11.9,<2.0.0)"]
+bunnet = ["bunnet (>=1.1.0,<2.0.0)"]
+databases = ["databases (>=0.6.0)"]
+django = ["databases (>=0.6.0)", "django (<5.0.0)"]
+mongoengine = ["mongoengine (>=0.23.1,<0.28.0)"]
+motor = ["motor (>=2.5.1,<4.0.0)"]
+orm = ["databases (>=0.6.0)", "orm (>=0.3.1)"]
+ormar = ["ormar (>=0.11.2)"]
+piccolo = ["piccolo (>=0.89,<0.122)"]
+scylla-driver = ["scylla-driver (>=3.25.6,<4.0.0)"]
+sqlalchemy = ["SQLAlchemy (>=1.3.20)", "sqlakeyset (>=2.0.1680321678,<3.0.0)"]
+sqlmodel = ["sqlakeyset (>=2.0.1680321678,<3.0.0)", "sqlmodel (>=0.0.8,<0.0.9)"]
+tortoise = ["tortoise-orm (>=0.16.18,<0.21.0)"]
+
+[[package]]
 name = "fastutils-hmarcuzzo"
-version = "0.3.24"
-description = "A personal utility library I've developed to streamline and optimize backend development with FastAPI in my projects. From generic repositories and queries to enums, error handling, and more, fastutils_hmarcuzzo encompasses essential tools that have proven invaluable in my development journey, whether as a novice or a seasoned professional."
+version = "0.4.4"
+description = "A personal utility library I've developed to streamline and optimize backend development with FastAPI in my projects."
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "fastutils_hmarcuzzo-0.3.24-py3-none-any.whl", hash = "sha256:f50b8c12da1876bed34a8ffc1fad5cef82012b3eaf1fcce4d540145439b7632b"},
-    {file = "fastutils_hmarcuzzo-0.3.24.tar.gz", hash = "sha256:dc21f5dccd0952c60ab59b5dc18d82be2959c3e2df730c0ee1ea5279ee141582"},
+    {file = "fastutils_hmarcuzzo-0.4.4-py3-none-any.whl", hash = "sha256:6f88ee7a9707a0c8fbd0996998a5665f584e7f564d551e1b5810c5dd6b67b2ac"},
+    {file = "fastutils_hmarcuzzo-0.4.4.tar.gz", hash = "sha256:4b7d542d721e2ee76275a39a9863661de1d8618738f2a0e00b1c1783edc72565"},
 ]
 
 [package.dependencies]
 fastapi = ">=0.104.0,<0.105.0"
+fastapi-pagination = ">=0.12.11,<0.13.0"
 passlib = ">=1.7.4,<2.0.0"
 pydantic = ">=2.4.2,<3.0.0"
 sqlalchemy = ">=2.0.22,<3.0.0"
@@ -482,7 +515,7 @@ develop = false
 type = "git"
 url = "https://github.com/hmarcuzzo/nutri-app.git"
 reference = "main"
-resolved_reference = "3414adfcddde02e32be4a848e6da10dd5e8bbbac"
+resolved_reference = "78fd83c3cbd5a190da42b3717c1f84cdbcf350fc"
 subdirectory = "core"
 
 [[package]]
@@ -918,4 +951,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "82fb05f37f68c69d08845098b949a49fbb63d37edff020853f674f26a18daf3b"
+content-hash = "9bcc7054d6a00b6f56850c22f0d523c8a3e8a7dfc6a700842a363a5bb9f53aaf"
