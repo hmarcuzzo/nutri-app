@@ -3,7 +3,7 @@ import time
 
 import uvicorn
 from fastapi import FastAPI
-from fastutils_hmarcuzzo.handlers.http_exceptions import HttpExceptionsHandler
+from fastutils_hmarcuzzo.applications import apply_utils
 from starlette.middleware.cors import CORSMiddleware
 
 from config.config import CORS_ORIGINS, APP_TZ, APP_PORT, APP_ENV
@@ -27,8 +27,8 @@ time.tzset()
 # Import routes
 user_app.include_router(user_routers)
 
-# Register all custom exception handler
-HttpExceptionsHandler(user_app)
+# Register all utils
+apply_utils(user_app, ["http_exceptions_handler", "pagination"])
 
 
 if __name__ == "__main__":
