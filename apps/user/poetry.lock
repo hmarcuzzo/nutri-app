@@ -267,30 +267,22 @@ all = ["email-validator (>=2.0.0)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)"
 
 [[package]]
 name = "fastutils-hmarcuzzo"
-version = "0.2.6"
+version = "0.3.24"
 description = "A personal utility library I've developed to streamline and optimize backend development with FastAPI in my projects. From generic repositories and queries to enums, error handling, and more, fastutils_hmarcuzzo encompasses essential tools that have proven invaluable in my development journey, whether as a novice or a seasoned professional."
 optional = false
-python-versions = ">=3.10"
+python-versions = ">=3.10,<4.0"
 files = [
-    {file = "fastutils_hmarcuzzo-0.2.6-py3-none-any.whl", hash = "sha256:e61b51a2ec82caaf4e4900323063f99e3010fd102519a703e8064707962df20e"},
-    {file = "fastutils_hmarcuzzo-0.2.6.tar.gz", hash = "sha256:50abf703861f24993dd46cab75d9b0f32b16e9421411b00dcbb959e855f7e7bb"},
+    {file = "fastutils_hmarcuzzo-0.3.24-py3-none-any.whl", hash = "sha256:f50b8c12da1876bed34a8ffc1fad5cef82012b3eaf1fcce4d540145439b7632b"},
+    {file = "fastutils_hmarcuzzo-0.3.24.tar.gz", hash = "sha256:dc21f5dccd0952c60ab59b5dc18d82be2959c3e2df730c0ee1ea5279ee141582"},
 ]
 
 [package.dependencies]
-annotated-types = "0.6.0"
-anyio = "3.7.1"
-exceptiongroup = "1.1.3"
-fastapi = "0.104.0"
-greenlet = "3.0.0"
-idna = "3.4"
-passlib = "1.7.4"
-pydantic = "2.4.2"
-pydantic-core = "2.10.1"
-sniffio = "1.3.0"
-sqlalchemy = "2.0.22"
-sqlalchemy-utils = "0.41.1"
-starlette = "0.27.0"
-typing-extensions = "4.8.0"
+fastapi = ">=0.104.0,<0.105.0"
+passlib = ">=1.7.4,<2.0.0"
+pydantic = ">=2.4.2,<3.0.0"
+sqlalchemy = ">=2.0.22,<3.0.0"
+sqlalchemy-utils = ">=0.41.1,<0.42.0"
+starlette = ">=0.27.0,<0.28.0"
 
 [[package]]
 name = "greenlet"
@@ -926,4 +918,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "fed4b0bf5bc2ff61c20d338fb1a50ecc84e32e9f229572244188180969ee5f8a"
+content-hash = "82fb05f37f68c69d08845098b949a49fbb63d37edff020853f674f26a18daf3b"
