@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from fastutils_hmarcuzzo.common.database.sqlalchemy.base_entity import BaseEntity
-from fastutils_hmarcuzzo.utils.hash_utils import generate_hash
+from fastutils_hmarcuzzo.utils.hash import generate_hash
 from nutri_app_core.constants.Enum.user_role import UserRole
 from sqlalchemy import Column, DateTime, Enum, String, event
 from sqlalchemy_utils import EmailType, PasswordType, has_changes
