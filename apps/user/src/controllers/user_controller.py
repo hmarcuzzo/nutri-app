@@ -1,9 +1,12 @@
 from uuid import UUID
 
 from fastapi import APIRouter, Depends
+from fastutils_hmarcuzzo.decorators.pagination_decorator import PaginationOptionsProvider
+from fastutils_hmarcuzzo.types.custom_pages import Page
 from fastutils_hmarcuzzo.types.delete_result import DeleteResult
 from fastutils_hmarcuzzo.types.update_result import UpdateResult
 from sqlalchemy.orm import Session
+from starlette.requests import Request
 from starlette.status import HTTP_201_CREATED
 
 from src.database.db_connection import get_user_db
@@ -17,6 +20,13 @@ user_router = APIRouter(tags=["Users"], prefix="/user")
 user_service = UserService()
 
 
+def get_pagination_params(request: Request):
+    skip = int(request.query_params.get("page", 1)) - 1
+    take = int(request.query_params.get("size", 10))
+
+    return {"skip": skip, "take": take}
+
+
 @user_router.post(
     "/create",
     status_code=HTTP_201_CREATED,
@@ -26,20 +36,18 @@ async def create_user(request: CreateUserDto, database: Session = Depends(get_us
     return await user_service.create_user(request, database)
 
 
-# @user_router.get(
-#     "/get",
-#     response_model=PaginationResponseDto[UserDto],
-#     response_model_exclude_unset=True,
-#     dependencies=[Depends(Auth([UserRole.ADMIN]))],
-# )
-# async def get_all_users(
-#     pagination: FindManyOptions = Depends(
-#         GetPagination(User, UserDto, FindAllUserQueryDto, OrderByUserQueryDto)
-#     ),
-#     database: Session = Depends(get_db),
-# ) -> Optional[PaginationResponseDto[UserDto]]:
-#     return await user_service.get_all_users(pagination, database)
-#
+@user_router.get(
+    "/get",
+    response_model=Page[UserDto],
+    response_model_exclude_unset=True,
+)
+async def get_all_users(
+    pagination=Depends(PaginationOptionsProvider()),
+    database: Session = Depends(get_user_db),
+) -> Page[UserDto]:
+    return await user_service.get_all_users(pagination, database)
+
+
 #
 @user_router.get("/get/{id}", response_model=UserDto)
 async def get_user_by_id(id: UUID, database: Session = Depends(get_user_db)) -> UserDto:
