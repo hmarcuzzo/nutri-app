@@ -11,6 +11,8 @@ services:
       - ${APP_PORT}:${APP_PORT}
     volumes:
       - .:/app
+    networks:
+      - user_app_network
     depends_on:
       - db_user
     command: python main.py
@@ -26,6 +28,12 @@ services:
       - user-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - user_app_network
 
 volumes:
   user-data:
+
+networks:
+    user_app_network:
+        driver: bridge
