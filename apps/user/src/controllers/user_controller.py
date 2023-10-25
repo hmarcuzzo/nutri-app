@@ -20,13 +20,6 @@ user_router = APIRouter(tags=["Users"], prefix="/user")
 user_service = UserService()
 
 
-def get_pagination_params(request: Request):
-    skip = int(request.query_params.get("page", 1)) - 1
-    take = int(request.query_params.get("size", 10))
-
-    return {"skip": skip, "take": take}
-
-
 @user_router.post(
     "/create",
     status_code=HTTP_201_CREATED,
